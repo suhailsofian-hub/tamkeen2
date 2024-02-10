@@ -1,0 +1,25 @@
+How to authenticate a user with Postman
+To authenticate a user with the basic authentication api and follow these steps:
+
+Open a new request tab by clicking the plus (+) button at the end of the tabs.
+Change the HTTP method to POST with the dropdown selector on the left of the URL input field.
+In the URL field enter the address to the authenticate route of your local API - http://localhost:4000/users/authenticate.
+Select the Body tab below the URL field, change the body type radio button to raw, and change the format dropdown 
+selector to JSON.
+Enter a JSON object containing the test username and password in the Body textarea:
+{
+    "username": "test",
+    "password": "test"
+}
+Click the Send button, you should receive a "200 OK" response containing the user details in the response body, 
+this indicates that the username and password are correct.
+
+To make an authenticated request using basic authentication credentials, follow these steps:
+
+Open a new request tab by clicking the plus (+) button at the end of the tabs.
+Change the HTTP method to GET with the dropdown selector on the left of the URL input field.
+In the URL field enter the address to the users route of your local API - http://localhost:4000/blogPost.
+Select the Authorization tab below the URL field, set the Type selector to Basic Auth, 
+and enter test in the Username field and test in the Password field.
+Click the Send button, you should receive a "200 OK" response containing 
+a JSON array with all the user records in the system (just the one test user in the example).
